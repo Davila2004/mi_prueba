@@ -10,3 +10,5 @@ Route::get('/', function () {
 
 // 2. CREAMOS LA RUTA MÁGICA (El Mesero)
 Route::resource('productos', ProductoController::class);
+
+Route::get('/reportes', [App\Http\Controllers\ProductoController::class, 'reportes']);

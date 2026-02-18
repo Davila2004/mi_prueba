@@ -100,4 +100,13 @@ class ProductoController extends Controller
         // 3. Regresar a la lista
         return redirect()->route('productos.index');
     }
+
+    public function reportes()
+    {
+        // PRUEBA 3: Usando IS NOT NULL (whereNotNull)
+        // Esto dice: "Dame todos los productos donde el nombre NO esté vacío"
+        $resultados = Producto::whereNotNull('nombre')->get();
+
+        return $resultados;
+    }
 }
